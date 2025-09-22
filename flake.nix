@@ -109,7 +109,10 @@
               wheelNeedsPassword = false;
             };
 
-            nix.settings.trusted-users = [ "garnix" ];
+            nix = {
+              gc.automatic = true;
+              settings.trusted-users = [ "garnix" ];
+            };
 
             users.users.garnix = {
               description = "A user garnix uses for redeploying ${cfg.persistence.name}";
